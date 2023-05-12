@@ -2,6 +2,8 @@ def read_file(file, mode):
     if mode == "env":
         with open(file, "r") as f:
             content = f.readlines()
+    elif mode == "json":
+        content = file.read()
     else:
         raise ValueError("Mode available: env, json")
     return content
