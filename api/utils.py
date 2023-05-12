@@ -1,4 +1,16 @@
 import plotly.graph_objects as go
+import streamlit as st
+
+
+def apply_func(file, str_content, func, captions="Output", language="bash"):
+    if file:
+        out = func(file=file)
+    else:
+        out = func(str_content=str_content)
+
+    st.subheader(captions)
+    st.code(out, language=language)
+    return out
 
 
 def add_one_line(fig, df, x, y, name):
@@ -24,7 +36,6 @@ def add_one_scatter(fig, df, x, y, name):
 
 
 def add_line(fig, df, x, y, names):
-
     if len(y) != len(names):
         raise Exception("Length y != Length name")
 
@@ -33,7 +44,6 @@ def add_line(fig, df, x, y, names):
 
 
 def add_scatter(fig, df, x, y, names):
-
     if len(y) != len(names):
         raise Exception("Length y != Length name")
 
