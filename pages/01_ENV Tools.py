@@ -7,8 +7,8 @@ from api.logic.env import env2json
 def main():
     st.header("ENV Tools")
     st.subheader("Notes: no file is saved to server")
-    file = st.file_uploader("Upload your json file here")
-    str_content = st.text_area("Paste your json file content file here")
+    file = st.file_uploader("Upload your env file here")
+    str_content = st.text_area("Paste your env file content file here")
 
     to_json_btn = st.button("Convert to json")
 
